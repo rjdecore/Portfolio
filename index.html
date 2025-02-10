@@ -141,38 +141,139 @@
     </div>
 </section>
 
-    <section id="projects" class="hidden">
-    <h2>Projects</h2>
+   <section id="projects">
+    <h2>📂 My Projects</h2>
+    
+    <!-- Tabs for categories -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="showTab('python')">Python Projects</button>
+        <button class="tab-button" onclick="showTab('sql')">SQL Projects</button>
+        <button class="tab-button" onclick="showTab('powerbi')">Power BI Projects</button>
+        <button class="tab-button" onclick="showTab('ml-dl')">ML & DL Projects</button>
+    </div>
 
-    <h3>📊 Data Analysis with Python</h3>
-    <ul>
-        <li><a href="https://github.com/yourusername/python-project1" target="_blank">Python Project 1</a></li>
-        <li><a href="https://github.com/yourusername/python-project2" target="_blank">Python Project 2</a></li>
-    </ul>
+    <!-- 🐍 Python Projects -->
+    <div id="python" class="tab-content active">
+        <div class="project-card">
+            <h3>🎬 Netflix Data Analysis</h3>
+            <p>Analyzed Netflix data to uncover trends in content, ratings, and popularity.</p>
+            <a href="https://github.com/rjdecore/Python-Project/tree/main/Netflix-Data-Analysis" target="_blank">🔗 View on GitHub</a>
+        </div>
 
-    <h3>🗄️ SQL Projects</h3>
-    <ul>
-        <li><a href="https://github.com/yourusername/sql-project1" target="_blank">SQL Project 1</a></li>
-        <li><a href="https://github.com/yourusername/sql-project2" target="_blank">SQL Project 2</a></li>
-    </ul>
+        <div class="project-card">
+            <h3>🛒 Super International Market Analysis</h3>
+            <p>Data analysis of an international market to understand sales patterns and trends.</p>
+            <a href="https://github.com/rjdecore/Python-Project/tree/main/Super_International_Market" target="_blank">🔗 View on GitHub</a>
+        </div>
 
-    <h3>📈 Power BI Projects</h3>
-    <ul>
-        <li><a href="https://github.com/yourusername/powerbi-project1" target="_blank">Power BI Dashboard 1</a></li>
-        <li><a href="https://github.com/yourusername/powerbi-project2" target="_blank">Power BI Dashboard 2</a></li>
-    </ul>
+        <div class="project-card">
+            <h3>🚖 Uber Data Analysis</h3>
+            <p>Analyzed Uber ride data to examine peak hours, demand, and pricing trends.</p>
+            <a href="https://github.com/rjdecore/Python-Project/tree/main/Uber-Data" target="_blank">🔗 View on GitHub</a>
+        </div>
 
-    <h3>🤖 Data Science Projects</h3>
-    <ul>
-        <li><a href="https://github.com/yourusername/datascience-project1" target="_blank">Machine Learning Project 1</a></li>
-        <li><a href="https://github.com/yourusername/datascience-project2" target="_blank">Deep Learning Project 2</a></li>
-    </ul>
+        <div class="project-card">
+            <h3>🌦️ Weather Data Analysis</h3>
+            <p>Explored weather data to identify patterns and trends in temperature and precipitation.</p>
+            <a href="https://github.com/rjdecore/Python-Project/tree/main/Weather-data" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <!-- View More Button -->
+        <div class="view-more">
+            <a href="https://github.com/rjdecore/Python-Project" target="_blank">🔍 View More Python Projects</a>
+        </div>
+    </div>
+
+    <!-- 🗄️ SQL Projects -->
+    <div id="sql" class="tab-content">
+        <div class="project-card">
+            <h3>📱 Google Play Store Case Study</h3>
+            <p>SQL analysis of app data to uncover insights on ratings, installs, and revenue.</p>
+            <a href="https://github.com/rjdecore/Sql-Projects/tree/main/Case%20Study%20%20Google%20play%20store" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <h3>🏢 Data Mart Case Study</h3>
+            <p>Data warehouse case study analyzing sales performance and customer trends.</p>
+            <a href="https://github.com/rjdecore/Sql-Projects/tree/main/Data-Mart-Case-Study" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <h3>🍔 Swiggy Case Study</h3>
+            <p>Analyzed food delivery data to understand customer behavior and order trends.</p>
+            <a href="https://github.com/rjdecore/Sql-Projects/tree/main/case%20Swiggy" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <h3>🏝️ India Tourism Analysis</h3>
+            <p>SQL analysis of Indian tourism data to identify travel patterns and insights.</p>
+            <a href="https://github.com/rjdecore/Sql-Projects/tree/main/case%20Indian%20Tourism" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <!-- View More Button -->
+        <div class="view-more">
+            <a href="https://github.com/rjdecore/Sql-Projects" target="_blank">🔍 View More SQL Projects</a>
+        </div>
+    </div>
+
+    <!-- 📊 Power BI Projects -->
+    <div id="powerbi" class="tab-content">
+        <div class="project-card">
+            <h3>🚴 Adventure Cycle (AWS Sales Project)</h3>
+            <p>Power BI dashboard analyzing AWS sales and revenue trends.</p>
+            <a href="https://github.com/rjdecore/Power-bi-Projects/tree/main/AWS%20Sales%20Project" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <h3>🏪 Super Store Analysis</h3>
+            <p>Retail store sales analysis using Power BI and data visualization.</p>
+            <a href="https://github.com/rjdecore/Power-bi-Projects/tree/main/SuperStore%20Anaylisis" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <!-- View More Button -->
+        <div class="view-more">
+            <a href="https://github.com/rjdecore/Power-bi-Projects" target="_blank">🔍 View More Power BI Projects</a>
+        </div>
+    </div>
+
+    <!-- 🤖 ML & DL Projects -->
+    <div id="ml-dl" class="tab-content">
+        <div class="project-card">
+            <h3>📝 Quora Question Similarity</h3>
+            <p>Machine learning model to detect duplicate questions on Quora.</p>
+            <a href="https://github.com/rjdecore/Machine-Learning-Project/tree/main/Quoras-Question-Similarity" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <div class="project-card">
+            <h3>🏢 Employee Attrition Prediction</h3>
+            <p>Analyzed employee data to predict attrition using ML models.</p>
+            <a href="https://github.com/rjdecore/Machine-Learning-Project/tree/main/Employe-Attrition" target="_blank">🔗 View on GitHub</a>
+        </div>
+
+        <!-- View More Button -->
+        <div class="view-more">
+            <a href="https://github.com/rjdecore/Machine-Learning-Project" target="_blank">🔍 View More ML & DL Projects</a>
+        </div>
+    </div>
 </section>
 
-    <section id="resume" class="hidden">
-        <h2>Resume</h2>
-        <a href="resume.pdf" download>Download Resume</a>
-    </section>
+    <section id="resume">
+    <h2>📄 My Resume</h2>
+
+    <!-- Data Analyst Resume -->
+    <div class="resume-section">
+        <h3>📊 Data Analyst Resume</h3>
+        <p>Download my Data Analyst resume to explore my experience in data visualization, SQL, and Power BI.</p>
+        <a href="your-data-analyst-resume.pdf" class="resume-button" download>📥 Download Resume</a>
+    </div>
+
+    <!-- Data Scientist & ML/DL Resume -->
+    <div class="resume-section">
+        <h3>🤖 Data Scientist & ML/DL Resume</h3>
+        <p>Download my Data Scientist & Machine Learning resume, which includes projects on AI, deep learning, and predictive modeling.</p>
+        <a href="your-data-scientist-resume.pdf" class="resume-button" download>📥 Download Resume</a>
+    </div>
+</section>
 
     <section id="contact" class="hidden">
     <h2>📞 Contact</h2>
@@ -219,6 +320,23 @@
     }
 
     document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+<script>
+function showTab(tabName) {
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    // Remove "active" class from all buttons
+    document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // Show selected tab and mark button as active
+    document.getElementById(tabName).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
 </script>
 </body>
 </html>
