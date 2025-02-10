@@ -1,0 +1,240 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+ .certificates-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.certificates-gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+Skill.css
+
+/* Skills Section Styling */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.skill-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 180px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill-card:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Section Styling */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.contact-list img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ✅ Global Background for All Sections */
+body {
+    background: linear-gradient(120deg, #0f0c29, #302b63, #24243e); /* 🎨 Stylish Gradient */
+    color: white; /* 🌟 White text */
+    font-family: 'Poppins', sans-serif; /* ✨ Modern font */
+}
+
+/* ✅ Add Padding & Center Content */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* ✅ Improve Headers for All Pages */
+h2 {
+    font-size: 28px;
+    color: #ffcc00; /* 🟡 Gold color */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* ✅ Improve Paragraph Styling */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ddd; /* 📜 Light Gray for readability */
+}
+
+/* Set different font colors for headings and text */
+h1, h2, h3 {
+    color: #ffffff; /* White color for headings */
+    font-weight: bold; /* Make headings bold */
+}
+
+p, span, li {
+    color: #e0e0e0; /* Light grey color for normal text */
+    font-weight: normal; /* Keep text normal */
+}
+
+/* Improve contrast for better readability */
+body {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light grey text */
+}
+
+/* Add some spacing for better layout */
+section {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Set different font colors for headings and text */
+h1, h2, h3 {
+    color: #007bff; /* Light Blue for headings */
+    font-weight: bold; /* Make headings bold */
+}
+
+p, span, li {
+    color: #4da6ff; /* Softer Blue for normal text */
+    font-weight: normal; /* Keep text normal */
+}
+
+/* Improve contrast for better readability */
+body {
+    background-color: #f5f5f5; /* Light Grey Background */
+    color: #333333; /* Dark Grey Text for contrast */
+}
+
+/* Add spacing and rounded corners for a sleek look */
+section {
+    padding: 20px;
+    border-radius: 10px;
+    background: #ffffff; /* White background for sections */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+#about {
+    background-color: #f0f0f0; /* Light background */
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#about h1 {
+    font-size: 28px;
+    color: #007bff; /* Stylish blue */
+    font-weight: bold;
+}
+
+#about h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+#about h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff5733; /* Orange scrolling effect */
+}
+
+#scrolling-text {
+    color: #28a745; /* Green text for scrolling */
+}
+
+#about p {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+<section id="about">
+    <h1>Hi, Welcome to My Portfolio</h1>
+    <h2>My name is Rituraj Singh</h2>
+    <h3>I am a <span id="scrolling-text"></span></h3>
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+</section>
+
+.profile-pic {
+    width: 250px; /* Increased size */
+    height: 250px;
+    border-radius: 50%; /* Keeps it circular */
+    display: block;
+    margin: 20px auto; /* Centers the image */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
+}
