@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rituraj Singh — Data Analyst | Aspiring Data Scientist</title>
+  <meta name="description" content="Portfolio of Rituraj Singh — Data Analyst & aspiring Data Scientist. Python, SQL, Power BI, Machine Learning, Streamlit." />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#0b0f15; --card:#121826; --muted:#9fb0c3; --text:#e8f0ff; --brand:#6bc1ff; --brand-2:#a98cff; --accent:#1f9dff;
+      --ring: rgba(107,193,255,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(1200px 800px at 10% -5%,#132034 10%,transparent 60%),
+                    radial-gradient(1000px 700px at 110% 5%,#1b1434 10%,transparent 60%),
+                    linear-gradient(#0b0f15,#0b0f15);
+         color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    a{color:var(--brand)}
+    img{max-width:100%;display:block}
+    .wrap{max-width:1150px;margin:0 auto;padding:0 20px}
+
+    /* NAV */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,21,.7);backdrop-filter:saturate(1.2) blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav h1{font-size:18px;margin:0;font-weight:800;letter-spacing:.3px}
+    .nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    .nav a{color:var(--text);text-decoration:none;font-weight:600;padding:10px 12px;border-radius:10px}
+    .nav a:hover{background:rgba(255,255,255,.06)}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1.2fr .9fr;gap:36px;align-items:center;padding:64px 0 24px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid rgba(255,255,255,.15);border-radius:999px;color:var(--muted);font-size:12px}
+    .title{font-size:44px;line-height:1.08;margin:.4rem 0 1rem;font-weight:800}
+    .lead{font-size:16px;color:var(--muted);max-width:64ch}
+    .cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{appearance:none;border:0;border-radius:14px;padding:12px 16px;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#001018;box-shadow:0 0 0 0 var(--ring)}
+    .btn-primary:hover{filter:brightness(1.07)}
+    .btn-ghost{background:rgba(255,255,255,.06);color:var(--text);border:1px solid rgba(255,255,255,.12)}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;overflow:hidden;box-shadow:0 10px 50px rgba(0,0,0,.35)}
+    .hero-card .img{aspect-ratio:4/5;object-fit:cover}
+
+    section{padding:56px 0;border-top:1px solid rgba(255,255,255,.06)}
+    section h2{font-size:28px;margin:0 0 10px}
+    .muted{color:var(--muted)}
+
+    /* SKILLS */
+    .skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .skill{background:var(--card);border:1px solid rgba(255,255,255,.08);padding:14px;border-radius:16px;position:relative}
+    .skill>.row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .skill h4{margin:0;font-size:16px}
+    .chip{font-size:11px;color:var(--muted);border:1px dashed rgba(255,255,255,.15);padding:4px 8px;border-radius:999px}
+    .subskills{display:none;margin-top:10px;color:#cfe1ff;font-size:13px;line-height:1.65}
+    .skill:hover .subskills, .skill[aria-expanded="true"] .subskills{display:block}
+    .skill:focus-within{outline:2px solid var(--ring)}
+    .toggle{background:transparent;border:0;color:var(--brand);cursor:pointer}
+
+    /* PROJECTS */
+    .tabs{display:flex;gap:10px;margin:10px 0 22px;flex-wrap:wrap}
+    .tab{padding:10px 12px;border:1px solid rgba(255,255,255,.15);border-radius:12px;cursor:pointer;color:var(--muted)}
+    .tab.active{color:#001018;background:linear-gradient(90deg,var(--brand),var(--brand-2));border-color:transparent}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px}
+    .card h4{margin:2px 0 0}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .card .actions{margin-top:auto;display:flex;gap:10px}
+    .btn-sm{font-size:13px;padding:8px 12px;border-radius:12px}
+
+    /* CERTIFICATES */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .gallery a{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);display:block;background:#0f1522}
+    .gallery img{width:100%;height:180px;object-fit:cover}
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;place-items:center;padding:20px;z-index:60}
+    .lightbox img{max-width:min(100%,1100px);max-height:85vh;border-radius:16px}
+
+    /* RESUME */
+    .resume-embed{width:100%;height:680px;border:1px solid rgba(255,255,255,.12);border-radius:16px}
+
+    /* CONTACT */
+    form{display:grid;gap:12px;max-width:720px}
+    input,textarea{background:var(--card);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:12px;color:var(--text);font:inherit}
+    textarea{min-height:140px}
+
+    /* UTIL */
+    .kicker{color:var(--muted);font-size:14px}
+    .spacer{height:6px}
+
+    /* RESPONSIVE */
+    @media (max-width: 1000px){
+      .hero{grid-template-columns:1fr;gap:24px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .skill-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      .grid{grid-template-columns:1fr}
+      .skill-grid{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      .title{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header>
+    <div class="wrap nav">
+      <h1>Rituraj • Portfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#internships">Internships</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#certs">Certificates</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / ABOUT -->
+  <section id="about" class="wrap hero">
+    <div>
+      <span class="badge">👋 Hello
+        <span class="spacer"></span>
+        <span class="kicker">Data Analyst • Aspiring Data Scientist</span>
+      </span>
+      <h2 class="title">Hi, I'm Rituraj — I turn raw data into clear business decisions.</h2>
+      <p class="lead">Python, SQL, Power BI, and Machine Learning practitioner. I’ve built end‑to‑end projects (EDA → modeling → dashboards) and created Streamlit UIs for ML use‑cases. Open to roles across India and Remote.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-ghost" href="#resume">View Resume</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img class="img" src="assets/img/profile.jpg" alt="Rituraj Singh profile"/>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="muted">Hover or tap to see libraries/tools inside each skill.</p>
+      <div class="skill-grid">
+        <div class="skill" tabindex="0" aria-expanded="false">
+          <div class="row">
+            <h4>Python</h4>
+            <span class="chip">EDA • Scripting</span>
+          </div>
+          <div class="subskills">Pandas, NumPy, Matplotlib, Seaborn, Plotly, Jupyter, OOP, Requests, BeautifulSoup (Web Scraping), Regex.</div>
+        </div>
+        <div class="skill" tabindex="0" aria-expanded="false">
+          <div class="row">
+            <h4>Machine Learning</h4>
+            <span class="chip">Modeling</span>
+          </div>
+          <div class="subskills">Scikit‑learn, XGBoost, Logistic/Linear Regression, Random Forest, SVM, KNN, Pipeline, Feature Engineering, Cross‑Validation, ROC‑AUC, F1.</div>
+        </div>
+        <div class="skill" tabindex="0" aria-expanded="false">
+          <div class="row">
+            <h4>SQL</h4>
+            <span class="chip">Analytics SQL</span>
+          </div>
+          <div class="subskills">Joins, CTEs, Window Functions, Subqueries, Aggregations, Views, Indexing, Data Modeling, Query Optimization.</div>
+        </div>
+        <div class="skill" tabindex="0" aria-expanded="false">
+          <div class="row">
+            <h4>Power BI</h4>
+            <span class="chip">BI & KPIs</span>
+          </div>
+          <div class="subskills">DAX, Data Modeling, Star Schema, Relationships, Power Query (ETL), Measures, Tooltips, Bookmarks, Drill‑through, Publishing.</div>
+        </div>
+        <div class="skill" tabindex="0" aria-expanded="false">
+          <div class="row">
+            <h4>Deployment</h4>
+            <span class="chip">Apps</span>
+          </div>
+          <div class="subskills">Streamlit (UI), Flask (APIs), Render/Streamlit Cloud (deploy), Git/GitHub, CI basics.</div>
+        </div>
+        <div class="skill" tabindex="0" aria-expanded="false">
+          <div class="row">
+            <h4>Data Viz</h4>
+            <span class="chip">Storytelling</span>
+          </div>
+          <div class="subskills">Charts (bar, line, area, scatter), Layout, Color & Contrast, Annotations, Insight Narratives.</div>
+        </div>
+        <div class="skill" tabindex="0" aria-expanded="false">
+          <div class="row">
+            <h4>NLP / DL (Basics)</h4>
+            <span class="chip">Extras</span>
+          </div>
+          <div class="subskills">Text Preprocessing, TF‑IDF, Word Embeddings, TensorFlow (intro), Sentiment Analysis.</div>
+        </div>
+        <div class="skill" tabindex="0" aria-expanded="false">
+          <div class="row">
+            <h4>Soft Skills</h4>
+            <span class="chip">Workplace</span>
+          </div>
+          <div class="subskills">Problem Solving, Communication, Stakeholder Management, Presentation, Collaboration.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="muted">Each category shows 4 featured projects. Buttons open GitHub code and screenshots (for Streamlit/BI UIs).</p>
+
+      <!-- Tabs just for quick jump links -->
+      <div class="tabs">
+        <a class="tab active" href="#ml">ML</a>
+        <a class="tab" href="#python">Python</a>
+        <a class="tab" href="#sql">SQL</a>
+        <a class="tab" href="#powerbi">Power BI</a>
+      </div>
+
+   <!-- ML -->
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:26px;">
+  <h3 id="ml" style="margin:0;">Machine Learning</h3>
+  <a class="btn btn-sm btn-outline-primary" 
+     target="_blank" 
+     href="https://github.com/rjdecore/Machine-Learning-Project">View More Projects</a>
+</div>
+
+<div class="grid">
+
+  <!-- Project 1 -->
+  <article class="card">
+    <h4>Customer Churn Prediction (w/ Streamlit UI)</h4>
+    <p>XGBoost + feature engineering; interactive UI for prediction demo.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Machine-Learning-Project/tree/main/Customer_churn_Predict">View Code</a>
+      <button class="btn btn-sm btn-ghost" data-shot="assets/img/shots/churn-ui.png">View Screenshot</button>
+    </div>
+  </article>
+
+  <!-- Project 2 -->
+  <article class="card">
+    <h4>Movie Recommendation System (Streamlit)</h4>
+    <p>Collaborative filtering & cosine similarity; UI for recommendations.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Machine-Learning-Project/tree/main/Movie-Recommender_system">View Code</a>
+      <button class="btn btn-sm btn-ghost" data-shot="assets/img/shots/movie.png">View Screenshot</button>
+    </div>
+  </article>
+
+  <!-- Project 3 -->
+  <article class="card">
+    <h4>Breast Cancer Classification</h4>
+    <p>Classical ML models with proper validation & metrics dashboard.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Machine-Learning-Project/tree/main/Breast_Cancer">View Code</a>
+      <button class="btn btn-sm btn-ghost" data-shot="assets/img/shots/cancer.png">View Screenshot</button>
+    </div>
+  </article>
+
+  <!-- Project 4 -->
+  <article class="card">
+    <h4>Customer Segmentation Project</h4>
+    <p>Customer segmentation using K-Means clustering on a Kaggle dataset.</p>
+    <p>The goal is to categorize customers into meaningful clusters based on demographic and behavioral features.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Machine-Learning-Project/tree/main/Unsupervi-K-mean/Customer%20Segmentation">View Code</a>
+      <button class="btn btn-sm btn-ghost" data-shot="assets/img/shots/cluster.png">View Screenshot</button>
+    </div>
+  </article>
+
+</div>
+
+
+   <!-- PYTHON SECTION -->
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:26px;">
+  <h3 id="python" style="margin:0;">Python (EDA & Analysis)</h3>
+  <a class="btn btn-sm btn-outline-primary" 
+     target="_blank" 
+     href="https://github.com/rjdecore/Python-Project">View More Projects</a>
+</div>
+
+<div class="grid">
+
+  <!-- Project 1 -->
+  <article class="card">
+    <h4>Uber Trip Analysis</h4>
+    <p>Demand peaks, route trends, and time-series insights.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Python-Project">View Code</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/Uber_Analysis.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+  <!-- Project 2 -->
+  <article class="card">
+    <h4>Amazon Sales Data Analysis</h4>
+    <p>E-commerce platforms like Amazon generate massive amounts of transactional data every day.
+To make informed business decisions, it is important to analyze this sales data and uncover patterns such as:
+
+Which product categories are performing well?
+What are the most preferred product sizes?
+How much do B2B orders contribute compared to retail orders?
+Which states contribute the highest sales volume?.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Python-Project/tree/main/Amazone-sales">View Code</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/Amazone.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+  <!-- Project 3 -->
+  <article class="card">
+    <h4>Google Search Trend Analysis</h4>
+    <p>Understanding search trends can provide valuable insights into user interests, seasonal patterns, and market behavior.
+The goal of this project is to analyze Google search data to identify patterns, correlations, and meaningful insights we use python Library like Pytrend to achive the finding just by changing the keywords.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Python-Project/tree/main/Google_Search_Trend_Analysis">View Code</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/Google-search-trend.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+ <!-- Project 4 -->
+  <article class="card">
+    <h4>Netflix Content Analysis (EDA + Sentiment Analysis)</h4>
+    <p>This project performs Exploratory Data Analysis (EDA) on the Netflix Titles Dataset using Python.
+The analysis explores content ratings, directors, actors, content production trends, and sentiment analysis of show descriptions.
+Visualizations are built using Plotly Express for interactive insights.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Python-Project/tree/main/neflik_senti">View Code</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/Netflix-sentiment.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+</div>
+
+
+
+<!-- SQL -->
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:26px;">
+  <h3 id="sql" style="margin:0;">SQL</h3>
+  <a class="btn btn-sm btn-outline-primary" 
+     target="_blank" 
+     href="https://github.com/rjdecore/Sql_Project">View More Projects</a>
+</div>
+
+<div class="grid">
+
+  <!-- Project 1 -->
+  <article class="card">
+    <h4>Spotify SQL Analytics</h4>
+    <p>Top artists, tracks, playlists, user engagement.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Sql_Project/tree/main/Spotify%20Advanced%20SQL%20Project">View Code</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/Spotify_SQL_Analytics.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+  <!-- Project 2 -->
+  <article class="card">
+    <h4>Online Bookstore</h4>
+    <p>This project analyzes an Online Bookstore dataset using SQL. It involves working with three core tables — Books, Customers, and Orders — to answer a series of basic and advanced business questions.</p>
+    <p>Database schema design, data importing from CSV files, aggregations & filtering, joins across multiple tables, advanced analytics (ranking, grouping, stock tracking).</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Sql_Project">View Code</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/online_book_store.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+  <!-- Project 3 -->
+  <article class="card">
+    <h4>Zepto E-commerce SQL</h4>
+    <p>This is a complete, real-world data analyst portfolio project based on an e-commerce inventory dataset scraped from Zepto — one of India’s fastest-growing quick-commerce startups. This project simulates real analyst workflows, from raw data exploration to business-focused data analysis.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Sql_Project/tree/main/Zepto-Ecommerce-Sales">View Code</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/Zepto_sol.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+  <!-- Project 4 -->
+  <article class="card">
+    <h4>Data Mart SQL</h4>
+    <p>This project is based on Case Study #1 from 8 Week SQL Challenge, analyzing weekly sales data from Data Mart. The focus is to measure sales performance before and after the sustainability initiative in June 2020, where Data Mart switched to eco-friendly packaging across all business areas.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Sql_Project/tree/main/D-Mart">View Code</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/DataMart.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+</div>
+
+
+
+    <!-- POWER BI -->
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:26px;">
+  <h3 id="powerbi" style="margin:0;">Power BI</h3>
+  <a class="btn btn-sm btn-outline-primary" 
+     target="_blank" 
+     href="https://github.com/rjdecore/Power-bi-Projects">View More Projects</a>
+</div>
+
+<div class="grid">
+
+  <!-- Project 1 -->
+  <article class="card">
+    <h4>Shopify Sales & Customer Funnel Dashboard</h4>
+    <p>This project presents an interactive Power BI dashboard for analyzing Shopify sales, customer purchase behavior, and regional performance.
+
+The analysis is built on one week of transactional data, but the dashboard provides pinpoint and detailed insights using advanced Power BI features like drill-throughs, bookmarks, custom tooltips, dynamic measures, and funnel analysis.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Power-bi-Projects/tree/main/Shopify%20Sales%20%26%20Customer%20Funnel%20Dashboard%20project">View Project</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/Shopify Sales.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+  <!-- Project 2 -->
+  <article class="card">
+    <h4>Pizza Sales Analysis (SQL + Power BI)</h4>
+    <p>This project combines SQL queries and an interactive Power BI dashboard to analyze one year of pizza sales data (Jan 2015 – Dec 2015).
+
+The analysis provides insights into revenue, ordering trends, category/size performance, and best & worst selling pizzas.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Power-bi-Projects/tree/main/Pizza_Sales_Dashboard_Sql_Powerbi">View Project</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/Pizza_sales.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+  <!-- Project 3 -->
+  <article class="card">
+    <h4>Zomato BI</h4>
+    <p>Restaurant aggregators like Zomato manage millions of listings worldwide.
+This dashboard provides insights into restaurant distribution, cuisines, ratings, and customer preferences, helping businesses & customers make informed decisions.</p>
+    <p>Cuisine performance, order funnels, city splits.</p>
+    
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Power-bi-Projects/tree/main/Zomato_Sales_Anyaisis">View Project</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/Zomato_BI.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+  <!-- Project 4 -->
+  <article class="card">
+    <h4>Uber Trip BI</h4>
+    <p>This project presents an interactive Power BI dashboard analyzing Uber trip data to provide insights into booking trends, revenue generation, trip efficiency, and location-based demand.
+
+The dashboard is designed for stakeholders to make data-driven decisions related to pricing models, driver allocation, and operational efficiency.</p>
+    <p>Demand heatmaps & time-of-day drill-downs.</p>
+    <div class="actions">
+      <a class="btn btn-sm btn-primary" target="_blank" href="https://github.com/rjdecore/Power-bi-Projects/tree/main/Uber_Trip_Detail">View Project</a>
+    </div>
+    <div class="pdf-preview" style="margin-top:15px;">
+      <iframe src="assets/docs/uber.pdf" width="100%" height="500px" style="border:1px solid #ddd; border-radius:8px;"></iframe>
+    </div>
+  </article>
+
+</div>
+
+
+
+    <!-- CERTIFICATES (Unlimited, add as many <a> as you want) -->
+  <section id="certs">
+    <div class="wrap">
+      <h2>Certificates (click to enlarge)</h2>
+      <div class="gallery" id="certGallery">
+        <!-- Duplicate/extend these lines for all your images. All will show. -->
+        <a href="assets/img/certificates/novitech-ai.jpg" data-shot="assets/img/certificates/novitech-ai.jpg"><img src="assets/img/certificates/novitech-ai.jpg" alt="Novitech AI"/></a>
+        <a href="assets/img/certificates/novitech-da.jpg" data-shot="assets/img/certificates/novitech-da.jpg"><img src="assets/img/certificates/novitech-da.jpg" alt="Novitech DA"/></a>
+        <a href="assets/img/certificates/pwc.jpg" data-shot="assets/img/certificates/pwc.jpg"><img src="assets/img/certificates/pwc.jpg" alt="PwC"/></a>
+        <a href="assets/img/certificates/tata.jpg" data-shot="assets/img/certificates/tata.jpg"><img src="assets/img/certificates/tata.jpg" alt="Tata"/></a>
+        <a href="assets/img/certificates/cloudyml.jpg" data-shot="assets/img/certificates/cloudyml.jpg"><img src="assets/img/certificates/cloudyml1.jpg" alt="CloudyML"/></a>
+           <a href="assets/img/certificates/cloudyml.jpg" data-shot="assets/img/certificates/cloudyml.jpg"><img src="assets/img/certificates/cloudyml2.jpg" alt="CloudyML"/></a>
+            <a href="assets/img/certificates/cloudyml.jpg" data-shot="assets/img/certificates/cloudyml.jpg"><img src="assets/img/certificates/cloudyml3.jpg" alt="CloudyML"/></a>
+               <a href="assets/img/certificates/cloudyml.jpg" data-shot="assets/img/certificates/cloudyml.jpg"><img src="assets/img/certificates/cloudyml4.jpg" alt="CloudyML"/></a>
+                  <a href="assets/img/certificates/cloudyml.jpg" data-shot="assets/img/certificates/cloudyml.jpg"><img src="assets/img/certificates/cloudyml5.jpg" alt="CloudyML"/></a>
+                     <a href="assets/img/certificates/cloudyml.jpg" data-shot="assets/img/certificates/cloudyml.jpg"><img src="assets/img/certificates/cloudyml6.jpg" alt="CloudyML"/></a>
+        <a href="assets/img/certificates/kulturehire.jpg" data-shot="assets/img/certificates/kulturehire.jpg"><img src="assets/img/certificates/kulturehire.jpg" alt="KultureHire"/></a>
+        <!-- Add more <a>...</a> items — everything will render. -->
+      </div>
+    </div>
+  </section>
+
+    <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <p class="muted"><strong>B.Tech (CSE)</strong> — I.K. Gujral Punjab Technical University (2011–2015)</p>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <h2>Work Experience</h2>
+      <ul class="muted">
+        <li><strong>Skylo Innovations — Sales Executive</strong> (Aug 2022 – Jan 2024, Mumbai)
+          <ul>
+            <li>Owned client relationships; created sales reports & insights for decision‑making.</li>
+            <li>Improved customer experience collaborating across support & ops.</li>
+            <li>Managed weekly pipeline & KPI tracking.</li>
+          </ul>
+        </li>
+        <li><strong>Illumination India — Sales & Marketing Specialist</strong> (May 2019 – Jun 2022, Mumbai)
+          <ul>
+            <li>Market research & customer segmentation for new opportunities.</li>
+            <li>Built sales dashboards and presented KPIs to leadership.</li>
+            <li>Helped improve acquisition & retention programs.</li>
+          </ul>
+        </li>
+        <li><strong>Mascot Power Conversion — Production Supervisor</strong> (Mar 2017 – Feb 2019, Mumbai)
+          <ul>
+            <li>Tracked production efficiency and prepared operational reports.</li>
+            <li>Partnered with QA to reduce defects by ~10%.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+
+  <!-- RESUME VIEW + DOWNLOAD -->
+  <section id="resume">
+    <div class="wrap">
+      <h2>Resume</h2>
+      <p class="muted">View inline or download as PDF/DOCX.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="assets/docs/Rituraj_Singh_Data_Analyst_Resume.pdf" download>⬇ Download PDF</a>
+        <a class="btn btn-ghost" href="assets/docs/Rituraj_Singh_Data_Analyst_Resume.docx" download>⬇ Download DOCX</a>
+      </div>
+      <div style="margin:16px 0"></div>
+      <object class="resume-embed" data="assets/docs/Rituraj_Singh_Data_Analyst_Resume.pdf" type="application/pdf">
+        <p class="muted">PDF viewer not supported. <a href="assets/docs/Rituraj_Singh_Data_Analyst_Resume.pdf" target="_blank">Open resume</a>.</p>
+      </object>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="muted">Prefer email? Click the button to draft an email with your details.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:raj.ritu301@gmail.com?subject=Opportunity%20for%20Data%20Analyst%20Role&body=Hi%20Rituraj,%0D%0A%0D%0AWe%20found%20your%20portfolio%20impressive.%20Let's%20connect!">Email Me</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rituraj2406" target="_blank">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/rjdecore" target="_blank">GitHub</a>
+      </div>
+      <div style="height:10px"></div>
+      <form onsubmit="event.preventDefault();window.location='mailto:raj.ritu301@gmail.com?subject='+encodeURIComponent(document.getElementById('sub').value)+'&body='+encodeURIComponent(document.getElementById('msg').value);">
+        <input id="sub" placeholder="Subject" required />
+        <textarea id="msg" placeholder="Your message" required></textarea>
+        <button class="btn btn-primary" type="submit">Send via Email</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX (for screenshots & certificates) -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <img id="lightImg" alt="Preview" />
+  </div>
+
+  <script>
+    // Toggle skill click (accessibility for mobile)
+    document.querySelectorAll('.skill').forEach(card=>{
+      card.addEventListener('click',()=>{
+        const exp = card.getAttribute('aria-expanded') === 'true';
+        card.setAttribute('aria-expanded', !exp);
+      })
+    })
+
+    // Lightbox for screenshots & certificates
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightImg');
+    function openLB(src){ lbImg.src = src; lb.style.display='grid'; }
+    function closeLB(){ lb.style.display='none'; lbImg.src=''; }
+    lb.addEventListener('click', closeLB);
+
+    // Any element with data-shot opens lightbox
+    document.querySelectorAll('[data-shot]').forEach(el=>{
+      el.addEventListener('click', e=>{
+        e.preventDefault(); openLB(el.getAttribute('data-shot'));
+      })
+    })
+    // Certificates are anchors; ensure click opens large view
+    document.querySelectorAll('#certGallery a').forEach(a=>{
+      a.addEventListener('click', e=>{ e.preventDefault(); openLB(a.getAttribute('data-shot')); })
+    })
+  </script>
+</body>
+</html>
