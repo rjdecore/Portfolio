@@ -4,7 +4,7 @@
 This is my personal portfolio showcasing projects in **Python, SQL, Power BI, and Machine Learning**.
 
 ## 🔗 Live Website
-👉 [Visit Portfolio](https://rjdecore.github.io/portfolio/)
+👉 [Visit Portfolio](https://github.com/rjdecore/Portfolio/)
 
 ## 📂 Structure
 - `index.html` → main webpage
