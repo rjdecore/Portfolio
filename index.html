@@ -634,12 +634,11 @@
   </section>
 
 
-
 <!-- RESUME VIEW + DOWNLOAD -->
 <section id="resume">
   <div class="wrap">
     <h2>Resume</h2>
-    <p class="muted">View inline (desktop only) or download as PDF/DOCX.</p>
+    <p class="muted">View inline (desktop & mobile) or download as PDF/DOCX.</p>
 
     <!-- Download Buttons -->
     <div class="cta" style="margin-bottom:15px;">
@@ -648,20 +647,16 @@
     </div>
 
     <!-- Resume Preview -->
-    <div class="pdf-container">
-      <object class="resume-embed"
-              data="assets/docs/Rituraj_Singh_Data_Analyst_Resume.pdf"
-              type="application/pdf"
-              width="100%" height="600px">
-        <!-- Fallback for mobiles -->
-        <p class="muted">
-          Your browser doesn’t support inline PDF viewing.  
-          👉 <a href="assets/docs/Rituraj_Singh_Data_Analyst_Resume.pdf" target="_blank">Click here to view resume</a>
-        </p>
-      </object>
+    <div class="pdf-container" style="margin-top:15px;">
+      <iframe 
+        src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/rjdecore/Portfolio/main/assets/docs/Rituraj_Singh_Data_Analyst_Resume.pdf&embedded=true" 
+        width="100%" height="600px" 
+        style="border:1px solid #ddd; border-radius:8px;">
+      </iframe>
     </div>
   </div>
 </section>
+
 
 
   <!-- CONTACT -->
