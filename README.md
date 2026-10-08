@@ -1,19 +1,26 @@
-# Portfolio
-# Portfolio Website
+# Rituraj Singh — Data Analytics Portfolio
 
-This is my personal portfolio showcasing projects in **Python, SQL, Power BI, and Machine Learning**.
+## Portfolio Objective
+A personal portfolio website showcasing hands-on work across **SQL, Power BI, Python, and Machine Learning**, with project reports and dashboard visuals.
 
-## 🔗 Live Website
-👉 [Visit Portfolio][![Portfolio](https://img.shields.io/badge/Portfolio-Visit-brightgreen)](https://rjdecore.github.io/Portfolio/)
+## Featured Work
+The portfolio site contains project documentation and supporting reports covering areas such as:
+- SQL analytics
+- Power BI dashboards
+- Python exploratory analysis
+- Machine-learning projects
+- Business and sales analytics
 
+## Website Structure
+- `index.html` — main portfolio page
+- `style.css` — site styling
+- `scripts.js` — JavaScript functionality
+- `assets/docs/` — project reports
+- `assets/image/` — project visuals
+- `icons/` — interface icons
 
-## 📂 Structure
-- `index.html` → main webpage
-- `style.css` → custom styles
-- `scripts.js` → JavaScript functionality
-- `assets/docs/` → project reports (PDFs)
-- `assets/image/` → screenshots & visuals
-- `icons/` → icons used in the site
+## Deployment
+Hosted through **GitHub Pages**.
 
-## 🚀 Deployment
-Deployed using **GitHub Pages**.
+## Portfolio Positioning
+The portfolio is intended to communicate practical analytical capability through projects, dashboards, SQL case studies, and supporting documentation.
